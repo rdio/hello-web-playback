@@ -58,6 +58,11 @@ callback_object.ready = function ready() {
 
   // find the embed/object element
   apiswf = $('#apiswf').get(0);
+
+  apiswf.rdio_startFrequencyAnalyzer({
+   frequencies: '10-band',
+   period: 100
+ })
 }
 
 callback_object.playStateChanged = function playStateChanged(playState) {
@@ -114,3 +119,15 @@ callback_object.playingSomewhereElse = function playingSomewhereElse() {
   // An Rdio user can only play from one location at a time.
   // If playback begins somewhere else then playback will stop and this callback will be called.
 }
+
+callback_object.updateFrequencyData = function updateFrequencyData(arrayAsString) {
+  // Called with frequency information after apiswf.rdio_startFrequencyAnalyzer(options) is called.
+  // arrayAsString is a list of comma separated floats.
+
+  var arr = arrayAsString.split(',');
+
+  $('#freq div').each(function(i) {
+    $(this).width(parseInt(parseFloat(arr[i])*500));
+  })
+}
+
