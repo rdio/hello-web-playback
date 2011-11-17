@@ -53,16 +53,35 @@ $(document).ready(function() {
 // the global callback object
 var callback_object = {};
 
-callback_object.ready = function ready() {
+callback_object.ready = function ready(user) {
   // Called once the API SWF has loaded and is ready to accept method calls.
 
   // find the embed/object element
   apiswf = $('#apiswf').get(0);
 
   apiswf.rdio_startFrequencyAnalyzer({
-   frequencies: '10-band',
-   period: 100
- })
+    frequencies: '10-band',
+    period: 100
+  });
+
+  if (user == null) {
+    $('#nobody').show();
+  } else if (user.isSubscriber) {
+    $('#subscriber').show();
+  } else if (user.isTrial) {
+    $('#trial').show();
+  } else if (user.inFreeLimited) {
+    $('#remaining').text(user.freeLimitedRemaining);
+    $('#free').show();
+  } else {
+    $('#nobody').show();
+  }
+
+  console.log(user);
+}
+
+callback_object.freeLimitedRemainingChanged = function freeLimitedRemainingChanged(remaining) {
+  $('#remaining').text(remaining);
 }
 
 callback_object.playStateChanged = function playStateChanged(playState) {

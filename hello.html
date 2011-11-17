@@ -31,6 +31,9 @@ THE SOFTWARE.
       height: 10px;
       background-color: red;
     }
+    #upsell div {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -69,6 +72,13 @@ THE SOFTWARE.
   <div></div>
   <div></div>
   <div></div>
+</div>
+
+<div id="upsell">
+  <div id="subscriber">You are an Rdio subscriber. You're awesome.</div>
+  <div id="trial">You are an Rdio trial user, Subscribe now!</div>
+  <div id="free">You are an Rdio Free user with <span id="remaining"></span>% of your quota remaining, subscribe now!</div>
+  <div id="nobody">To hear full tracks subscribe to Rdio.</div>
 </div>
 </body>
 </html>
