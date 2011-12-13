@@ -70,8 +70,8 @@ callback_object.ready = function ready(user) {
     $('#subscriber').show();
   } else if (user.isTrial) {
     $('#trial').show();
-  } else if (user.inFreeLimited) {
-    $('#remaining').text(user.freeLimitedRemaining);
+  } else if (user.isFree) {
+    $('#remaining').text(user.freeRemaining);
     $('#free').show();
   } else {
     $('#nobody').show();
@@ -80,7 +80,7 @@ callback_object.ready = function ready(user) {
   console.log(user);
 }
 
-callback_object.freeLimitedRemainingChanged = function freeLimitedRemainingChanged(remaining) {
+callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) {
   $('#remaining').text(remaining);
 }
 
