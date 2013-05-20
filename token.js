@@ -27,7 +27,6 @@ THE SOFTWARE.
 //   ./rdio-call --consumer-key=YOUR_CONSUMER_KEY --consumer-secret=YOUR_CONSUMER_SECRET getPlaybackToken domain=YOUR_DOMAIN
 // it will respond with
 //   {"status": "ok", "result": "YOUR_PLAYBACK_TOKEN"}
-// if you want to do playback as a particular user, pass --authenticate to rdio-call
 // then update playback_token below with YOUR_PLAYBACK_TOKEN and the domain below with YOUR_DOMAIN
 
 var playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
