@@ -1,0 +1,45 @@
+/* line 2, global.scss */
+#upsell div {
+  display: none;
+}
+
+/* line 6, global.scss */
+.lead {
+  height: 200px;
+  background-color: #ddd;
+  color: #666;
+  padding: 30px;
+}
+
+/* line 13, global.scss */
+.playControls {
+  margin-top: 30px;
+}
+
+/* line 17, global.scss */
+.artistAlbumInfo {
+  text-align: center;
+  background-color: #ddd;
+}
+
+/* line 22, global.scss */
+.albumArt {
+  border-radius: 50%;
+  border: 3px solid #ccc;
+}
+
+/* line 27, global.scss */
+.frequency {
+  margin-top: 5px;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Opera, Chrome, and Safari */
+}
+/* line 32, global.scss */
+.frequency div {
+  height: 6px;
+  background-color: #ccc;
+  border: 1px dotted #ddd;
+}
