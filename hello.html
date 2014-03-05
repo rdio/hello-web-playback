@@ -22,63 +22,74 @@ THE SOFTWARE.
 -->
 <head>
   <title>Rdio Playback API simple example</title>
-  <script src="jquery-1.5.1.min.js"></script>
+  <script src="js/jquery-1.5.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-  <script src="token.js"></script>
-  <script src="hello.js"></script>
-  <style type="text/css">
-    #freq div {
-      height: 10px;
-      background-color: red;
-    }
-    #upsell div {
-      display: none;
-    }
-  </style>
+  <script src="js/token.js"></script>
+  <script src="js/hello.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheets/global.css">
 </head>
 <body>
-<h1>Rdio Playback API simple example</h1>
-<div id="apiswf"></div>
-<dl>
-  <dt>playState</dt>
-  <dd id="playState"></dd>
+  <section class="lead">
+    <h1>Rdio Playback API simple example</h1>
+  </section>
 
-  <dt>track</dt>
-  <dd id="track"></dd>
-  <dt>album</dt>
-  <dd id="album"></dd>
-  <dt>artist</dt>
-  <dd id="artist"></dd>
-  <dt>art</dt>
-  <dd><img src="" id="art"></dd>
-  <dt>position</dt>
-  <dd id="position"></dd>
-</dl>
+  <div class="container">
 
-<input id="play_key" value="a997982"><button id="play">Play</button><br>
-<button id="stop">Stop</button>
-<button id="pause">Pause</button>
-<button id="previous">Previous</button>
-<button id="next">Next</button>
+    <div id="upsell" class="alert alert-info alert-dismissable">
+      <div id="subscriber">You are an Rdio subscriber. You're awesome.</div>
+      <div id="trial">You are an Rdio trial user, Subscribe now!</div>
+      <div id="free">You are an Rdio Free user with <span id="remaining"></span>% of your quota remaining, subscribe now!</div>
+      <div id="nobody">To hear full tracks subscribe to Rdio.</div>
+    </div>
 
-<div id="freq">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+    <div id="apiswf"></div>
+      <div class="well" style="overflow: hidden;">
+        <div class="row" style="margin-bottom: 10px;">
+          <div class="col-md-2">Enter Album Key</div>
+          <div class="col-md-10">
+            <input id="play_key" class="form-control" value="a239851">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"> 
+            <div class="playControls btn-group">
+              <button id="play" class="btn btn-default"><i class="fa fa-play-circle"></i> Play</button>
+              <button id="stop" class="btn btn-default"><i class="fa fa-stop"></i> Stop</button>
+              <button id="pause" class="btn btn-default"><i class="fa fa-pause"></i> Pause</button>
+              <button id="previous" class="btn btn-default"><i class="fa fa-step-backward"></i> Previous</button>
+              <button id="next" class="btn btn-default"><i class="fa fa-step-forward"></i> Next</button>
+            </div>
+          </div>
+          <div class="col-md-6"> 
+            <div id="freq" class="frequency">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row well">
+        <div class="artistAlbumInfo well col-md-6 ">
+          <h3><span id="artist"></span> - <span id="track"></span></h3>
+          <img src="" id="art" class="albumArt">
+        </div>
+        <div class="col-md-6">
+          <h3 id="album"></h3>
+          <h4>Playstate <p id="playState"></p></h4>
+          <h4>Position <p id="position"></p></h4>
+        </div>
+      </div>
 </div>
 
-<div id="upsell">
-  <div id="subscriber">You are an Rdio subscriber. You're awesome.</div>
-  <div id="trial">You are an Rdio trial user, Subscribe now!</div>
-  <div id="free">You are an Rdio Free user with <span id="remaining"></span>% of your quota remaining, subscribe now!</div>
-  <div id="nobody">To hear full tracks subscribe to Rdio.</div>
-</div>
 </body>
 </html>

@@ -1,0 +1,37 @@
+
+#upsell div {
+  display: none;
+}
+
+.lead {
+	height: 200px;
+	background-color: #ddd;
+	color: #666;
+	padding: 30px;
+}
+
+.playControls {
+	margin-top: 30px;
+}
+
+.artistAlbumInfo {
+	text-align: center;
+	background-color: #ddd;
+}
+
+.albumArt {
+	border-radius: 50%;
+	border: 3px solid #ccc;
+}
+
+.frequency {
+	margin-top: 5px;
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); /* IE 9 */
+	-webkit-transform:rotate(180deg); /* Opera, Chrome, and Safari */
+	div {
+		height: 6px;
+		background-color: #ccc;
+		border: 1px dotted #ddd;
+	}
+}
